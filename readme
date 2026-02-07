@@ -1,0 +1,52 @@
+wally - animated wallpaper for X11
+===================================
+wally is a minimal animated wallpaper utility that plays GIFs and videos
+on your X11 root window. It does one thing and does it well.
+
+Requirements
+------------
+- X11
+- giflib
+- ffmpeg (libavformat, libavcodec, libavutil, libswscale)
+
+Installation
+------------
+Enter the following command to build and install wally
+(if necessary as root):
+
+    make clean install
+
+Running wally
+-------------
+Simply invoke the 'wally' command with a file:
+
+    wally animation.gif
+
+This will play the animation on your root window in a loop.
+
+Options
+-------
+    -c            center on screen
+    -f            fill screen (may crop)
+    -s            scale to fit screen
+    -o            set once and exit (for startup scripts)
+
+Supported formats: gif, mp4, webm, mkv
+
+Examples
+--------
+Play a GIF scaled to fit:
+
+    wally -s ~/wallpapers/cat.gif
+
+Fill screen with a video:
+
+    wally -f ~/videos/rain.mp4
+
+Set wallpaper on login (add to .xinitrc):
+
+    wally -o -f ~/wallpapers/space.gif &
+
+Center a small animation:
+
+    wally -c animation.gif
